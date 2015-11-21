@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>DevCon Yangon 2015</title>
+
+	<meta name="description" content="Developer Conference Yangon - 2015.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="css/material.red-blue.min.css">
+	<script src="js/material.min.js"></script>
+
+	<link rel="stylesheet" href="css/icon.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
+</head>
+<body>
+
+	<div class="dc-layout-transparent mdl-layout mdl-js-layout">
+		<header class="mdl-layout__header mdl-layout__header--transparent">
+			<div class="mdl-layout__header-row">
+				<span class="mdl-layout-title">DevCon Yangon 2015</span>
+			</div>
+		</header>
+
+		<!-- Drawer Menu -->
+		<div class="mdl-layout__drawer drawer">
+			<span class="mdl-layout-title">
+				<img src="img/logo.png" height="20" alt="">
+				DevCon 2015
+			</span>
+			<nav class="mdl-navigation">
+				<a class="mdl-navigation__link" href="#">
+					<i class="material-icons">home</i>
+					Cover
+				</a>
+				<a class="mdl-navigation__link" href="#">
+					<i class="material-icons">people</i>
+					Speaker
+				</a>
+				<a class="mdl-navigation__link" href="#">
+					<i class="material-icons">list</i>
+					Topics
+				</a>
+				<a class="mdl-navigation__link" href="#">
+					<i class="material-icons">schedule</i>
+					Schedule
+				</a>
+				<a class="mdl-navigation__link" href="#">
+					<i class="material-icons" style="color:#F44336">star</i>
+					My Schedule
+				</a>
+			</nav>
+			<div class="mdl-layout-spacer"></div>
+			<div class="nav-footer">
+				&copy; 2015. DevCon WG.
+			</div>
+		</div>
+
+		<main class="mdl-layout__content">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+
+					<!-- Cover Page -->
+					<div id="home" class="swiper-slide page">
+						<h1>DevCon Yangon 2015</h1> <br>
+						<h2>Experience Means Everything</h2> <br><br>
+
+						<time>
+							<i class="material-icons">event</i>
+							Nov 21<sup>st</sup> <small>&amp;</small> 22<sup>nd</sup>
+						</time>
+					</div>
+					
+					<!-- Speaker Page -->
+					<div id="speakers" class="swiper-slide page">
+						<div class="scroller">
+						<div class="page-head">
+							<h3 class="mdl-shadow--2dp">Speakers</h3>
+							
+							<div class="filter">
+								<div class="mdl-textfield mdl-js-textfield">
+									<input class="mdl-textfield__input" type="text" id="speaker-filter">
+									<label class="mdl-textfield__label" for="speaker-filter">
+										Search Speaker
+									</label>
+								</div>
+								<i class="material-icons">search</i>
+							</div>
+						</div>
+					
+						<ul class="speaker-list"></ul>
+						<script type="text/x-template" id="speaker-template">
+							<li data-id="<%= id %>">
+								<div class="thumb">
+									<% if(photo) { %>
+										<img src="img/speakers/<%= id %>.png" height="64" alt="">
+									<% } else { %>
+										<img src="img/photo.png" height="64" alt="">
+									<% } %>
+								</div>
+								<div class="speaker">
+									<b class="name"><%= name %></b>
+									<small class="org"><%= org %> / <%= position %></small>
+									<span class="topic"><%= topic %></span>
+								</div>
+							</li>
+						</script>
+						</div>
+					</div>
+					
+					<!-- Topic Page -->
+					<div id="topics" class="swiper-slide page">
+						<div class="scroller">
+						<div class="page-head">
+							<h3 class="mdl-shadow--2dp">Topics</h3>
+							
+							<div class="filter">
+								<div class="mdl-textfield mdl-js-textfield">
+									<input class="mdl-textfield__input" type="text" id="topic-filter">
+									<label class="mdl-textfield__label" for="topic-filter">
+										Search Topic
+									</label>
+								</div>
+								<i class="material-icons">search</i>
+							</div>
+						</div>
+						
+						<ul class="topic-list"></ul>
+						<script type="text/x-template" id="topic-template">
+							<li data-id="<%= id %>">
+								<span class="title"><%= topic %></span>
+								<ol>
+									<li><i class="material-icons">account_circle</i> <%= name %></li>
+									<li><i class="material-icons">room</i> <%= room %></li>
+									<li><i class="material-icons">alarm</i> Day <%= day %>, <%= time %></li>
+								</ol>
+							</li>
+						</script>
+						</div>
+					</div>
+					
+					<!-- Schedule Page -->
+					<div id="schedule" class="swiper-slide page">
+						<div class="scroller">
+						<h3 class="mdl-shadow--2dp">Schedule</h3>
+
+						<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+							<div class="mdl-tabs__tab-bar">
+								<a href="#day1" class="mdl-tabs__tab is-active">Day 1</a>
+								<a href="#day2" class="mdl-tabs__tab">Day 2</a>
+							</div>
+
+							<div class="mdl-tabs__panel is-active" id="day1">
+								<ul class="schedule-list">
+									<li data-time="8:30 AM - 9:45 AM">
+										<span class="time">8:30 AM - 9:45 AM</span>
+									</li>
+									<li data-time="9:45 AM - 10:00 AM">
+										<span class="time">9:45 AM - 10:00 AM</span>
+									</li>
+									<li data-time="10:00 AM - 11:00 AM">
+										<span class="time">10:00 AM - 11:00 AM</span>
+									</li>
+									<li data-time="11:00 AM - 12:00 PM">
+										<span class="time">11:00 AM - 12:00 PM</span>
+									</li>
+									<li data-time="1:00 PM - 2:00 PM">
+										<span class="time">1:00 PM - 2:00 PM</span>
+									</li>
+									<li data-time="2:00 PM - 3:00 PM">
+										<span class="time">2:00 PM - 3:00 PM</span>
+									</li>
+									<li data-time="3:00 PM - 4:00 PM">
+										<span class="time">3:00 PM - 4:00 PM</span>
+									</li>
+									<li data-time="4:00 PM - 5:00 PM">
+										<span class="time">4:00 PM - 5:00 PM</span>
+									</li>
+								</ul>
+							</div>
+
+							<div class="mdl-tabs__panel" id="day2">
+								<ul class="schedule-list">
+									<li data-time="9:00 AM - 10:00 AM">
+										<span class="time">9:00 AM - 10:00 AM</span>
+									</li>
+									<li data-time="10:00 AM - 11:00 AM">
+										<span class="time">10:00 AM - 11:00 AM</span>
+									</li>
+									<li data-time="11:00 AM - 12:00 PM">
+										<span class="time">11:00 AM - 12:00 PM</span>
+									</li>
+									<li data-time="1:00 PM - 2:00 PM">
+										<span class="time">1:00 PM - 2:00 PM</span>
+									</li>
+									<li data-time="2:00 PM - 3:00 PM">
+										<span class="time">2:00 PM - 3:00 PM</span>
+									</li>
+									<li data-time="3:00 PM - 4:30 PM">
+										<span class="time">3:00 PM - 4:30 PM</span>
+									</li>
+									<li data-time="4:30 PM - 5:00 PM">
+										<span class="time">4:30 PM - 5:00 PM</span>
+									</li>
+								</ul>
+							</div>
+
+							<script type="text/x-template" id="session-template">
+								<div class="session">
+									<div class="session-icon">
+										<label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-<%= id %>">
+											<input type="checkbox" id="icon-toggle-<%= id %>" class="mdl-icon-toggle__input set-favorite" data-id="<%= id %>" 
+												<% if(favorite) { %>
+													checked
+												<% } %>	>
+											<i class="mdl-icon-toggle__label material-icons">star</i>
+										</label>
+									</div>
+									<div class="session-info" data-id="<%= id %>">
+										<div class="session-title">
+											<%= topic %>
+										</div>
+										<div class="session-meta">
+											<i class="material-icons">account_circle</i> <%= name %>
+											&nbsp;&nbsp;
+											<i class="material-icons">room</i> <%= room %>
+										</div>
+									</div>										
+								</div>
+							</script>
+						</div>
+						</div>
+					</div>
+
+					<!-- My Sechedule Page -->
+					<div id="my-schedule" class="swiper-slide page">
+						<div class="scroller">
+						<h3 class="mdl-shadow--2dp">My Schedule</h3>
+
+						<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+							<div class="mdl-tabs__tab-bar">
+								<a href="#myday1" class="mdl-tabs__tab is-active">Day 1</a>
+								<a href="#myday2" class="mdl-tabs__tab">Day 2</a>
+							</div>
+
+							<div class="mdl-tabs__panel is-active" id="myday1">
+								<ul class="schedule-list">
+									<li data-time="8:30 AM - 9:45 AM">
+										<span class="time">8:30 AM - 9:45 AM</span>
+									</li>
+									<li data-time="9:45 AM - 10:00 AM">
+										<span class="time">9:45 AM - 10:00 AM</span>
+									</li>
+									<li data-time="10:00 AM - 11:00 AM">
+										<span class="time">10:00 AM - 11:00 AM</span>
+									</li>
+									<li data-time="11:00 AM - 12:00 PM">
+										<span class="time">11:00 AM - 12:00 PM</span>
+									</li>
+									<li data-time="1:00 PM - 2:00 PM">
+										<span class="time">1:00 PM - 2:00 PM</span>
+									</li>
+									<li data-time="2:00 PM - 3:00 PM">
+										<span class="time">2:00 PM - 3:00 PM</span>
+									</li>
+									<li data-time="3:00 PM - 4:00 PM">
+										<span class="time">3:00 PM - 4:00 PM</span>
+									</li>
+									<li data-time="4:00 PM - 5:00 PM">
+										<span class="time">4:00 PM - 5:00 PM</span>
+									</li>
+								</ul>
+							</div>
+
+							<div class="mdl-tabs__panel" id="myday2">
+								<ul class="schedule-list">
+									<li data-time="9:00 AM - 10:00 AM">
+										<span class="time">9:00 AM - 10:00 AM</span>
+									</li>
+									<li data-time="10:00 AM - 11:00 AM">
+										<span class="time">10:00 AM - 11:00 AM</span>
+									</li>
+									<li data-time="11:00 AM - 12:00 PM">
+										<span class="time">11:00 AM - 12:00 PM</span>
+									</li>
+									<li data-time="1:00 PM - 2:00 PM">
+										<span class="time">1:00 PM - 2:00 PM</span>
+									</li>
+									<li data-time="2:00 PM - 3:00 PM">
+										<span class="time">2:00 PM - 3:00 PM</span>
+									</li>
+									<li data-time="3:00 PM - 4:30 PM">
+										<span class="time">3:00 PM - 4:30 PM</span>
+									</li>
+									<li data-time="4:30 PM - 5:00 PM">
+										<span class="time">4:30 PM - 5:00 PM</span>
+									</li>
+								</ul>
+							</div>
+
+							<script type="text/x-template" id="my-session-template">
+								<div class="session">
+									<div class="session-icon">
+										<label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="my-icon-toggle-<%= id %>">
+											<input type="checkbox" id="my-icon-toggle-<%= id %>" class="mdl-icon-toggle__input set-favorite" data-id="<%= id %>" checked>
+											<i class="mdl-icon-toggle__label material-icons">star</i>
+										</label>
+									</div>
+									<div class="session-info" data-id="<%= id %>">
+										<div class="session-title">
+											<%= topic %>
+										</div>
+										<div class="session-meta">
+											<i class="material-icons">account_circle</i> <%= name %>
+											&nbsp;&nbsp;
+											<i class="material-icons">room</i> <%= room %>
+										</div>
+									</div>
+								</div>
+							</script>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+			
+		</main>
+	</div>
+
+	<!-- Popup Page -->
+	<div class="popup page"></div>
+	<script type="text/x-template" id="popup-template">
+		<div class="scroller">
+		<div class="page-head">
+			<button class="mdl-button mdl-js-button mdl-button--icon back">
+				<i class="material-icons">arrow_back</i>
+			</button>
+			<h3 class="mdl-shadow--2dp"><%= name %></h3>
+			<span><%= position %> / <%= org %></span>
+		</div>
+		<div class="page-body">
+			<div class="photo">
+				<% if(photo) { %>
+					<img src="img/speakers/<%= id %>.png" height="128" alt="">
+				<% } else { %>
+					<img src="img/photo.png" height="128" alt="">
+				<% } %>
+			</div>
+			<table>
+				<tr>
+					<td width="32px"><i class="material-icons">subject</i></td>
+					<td><b><%= topic %></b></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<%= summary %>
+					</td>
+				</tr>
+				<tr>
+					<td><i class="material-icons">room</i></td>
+					<td><%= room %></td>
+				</tr>
+				<tr>
+					<td><i class="material-icons">alarm</i></td>
+					<td><%= time %></td>
+				</tr>
+			</table>
+		</div>
+		</div>
+	</script>
+
+	<script src="cordova.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.livefilter.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/underscore.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/app.js"></script>
+	
+	<script>
+		document.addEventListener("deviceready", onDeviceReady, false);
+
+		function onDeviceReady() {
+			window.addEventListener("orientationchange", function() {
+				$(".page").css({
+					"height": $(window).height() + "px"
+				});
+			}, false);
+		}
+	</script>
+</body>
+</html>

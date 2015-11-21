@@ -1,0 +1,290 @@
+@font-face {
+  font-family: 'Noto Sans Myanmar';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans Myanmar'), url(../font/NotoSansMyanmar-Regular.ttf) format('ttf');
+}
+
+body {
+	background: #fff;
+	font-family: 'noto sans myanmar', padauk, myanmar3, tharlon, pyidaungsu, sans-serif;
+}
+
+.dc-layout-transparent {
+	background: transparent;
+}
+
+.dc-layout-transparent .mdl-layout__header,
+.dc-layout-transparent .mdl-layout__drawer-button {
+	color: white;
+}
+
+#home {
+	text-align: center;
+	background: #ddd url(../img/bg.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+#home h1, #home h2, #home time {
+	margin: 0 auto;
+	display: inline-block;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.6);
+	border-radius: 20px;
+	text-align: center;
+}
+
+#home h1 {
+	font-weight: bold;
+	margin: 120px 0 5px 0;
+	font-size: 1.6em;
+	padding: 8px 25px;
+}
+
+#home h2 {
+	font-size: 1em;
+	padding: 0 20px;
+	line-height: 2.5em;
+}
+
+#home time {
+	font-size: 1em;
+	padding: 0 20px;
+	line-height: 2em;
+	background: rgba(100, 0, 0, 0.6);
+}
+
+time .material-icons {
+	vertical-align: middle;
+}
+
+nav .material-icons {
+	vertical-align: middle;
+	font-size: 1.8em;
+	margin-right: 15px;
+}
+
+.drawer .mdl-layout-title {
+	border-bottom: 1px solid #ddd;
+}
+
+.nav-footer {
+	color: #666;
+	padding: 20px;
+	border-top: 1px solid #ccc;
+}
+
+.page {
+	background: #fff;
+	overflow-x: scroll;
+}
+
+.page h3 {
+	color: #fff;
+	padding: 8px 0 10px 50px;
+	margin: 0;
+	font-size: 1.3em;
+	background: #E53935;
+}
+
+.page ul {
+	margin: 0;
+	padding: 0 10px;
+	list-style: none;
+}
+
+.page ul > li {
+	padding: 20px 10px;
+	border-bottom: 1px solid #ddd;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+#speakers ul > li:hover, #speakers ul > li:active,
+#topics ul > li:hover, #topics ul > li:active,
+.session .session-info:hover, .session .session-info:active {
+	background: #efefef;
+}
+
+.page .thumb {
+	float: left;
+	width: 64px;
+	height: 64px;
+	border-radius: 64px;
+	border: 1px solid #ddd;
+}
+
+.page .speaker {
+	margin-left: 80px;
+	font-size: 1em;
+	line-height: 1.2em;
+}
+
+.page .name, .page .org, .page .title {
+	display: block;
+}
+
+.page .org {
+	color: #999;
+	margin: 0 0 5px 0;
+}
+
+.page .name, .page .title {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #E53935;
+}
+
+.page ol {
+	list-style: none;
+	padding: 0;
+	margin: 10px 0 0 0;
+	font-size: 0.9em;
+	color: #999;
+}
+
+.page ol li {
+	float: left;
+	margin-right: 20px;
+}
+
+.page ol .material-icons {
+	font-size: 1em;
+	vertical-align: middle;
+}
+
+.page ol li.em {
+	color: #333;
+}
+
+.page .time {
+	font-size: 1.6em;
+	font-weight: bold;
+	color: #E53935;
+}
+
+.page-head {
+	background: #FFEBEE;
+}
+
+.filter {
+	padding: 0 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.filter .material-icons {
+	margin-top: 25px;
+}
+
+.filter .mdl-textfield {
+	flex-grow: 1;
+}
+
+.session {
+	font-size: 0.9em;
+	color: #999;
+	overflow: hidden;
+	margin-top: 10px;
+	border: 1px solid #efefef;
+	background: #efefef;
+}
+
+.session .session-icon {
+	float: left;
+	padding: 10px;
+}
+
+.session .session-info {
+	float: left;
+	width: 72%;
+	padding: 10px 10px 5px 10px;
+	background: #fff;
+}
+
+.session .session-title {
+	color: #555;
+	line-height: 1.2em;
+}
+
+.session .session-info .material-icons {
+	color: #999;
+	font-size: 1em;
+	vertical-align: middle;
+}
+
+#my-schedule {
+	background: #FFEBEE;
+}
+
+#my-schedule .session {
+	background: #FFCDD2;
+	border: 1px solid #FFCDD2;
+}
+
+#my-schedule .session-title {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+#my-schedule .time {
+	color: #E53935;
+}
+
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	z-index: 99999;
+	overflow-x: scroll;
+	display: none;
+}
+
+.popup .photo {
+	margin: 0 auto 10px auto;
+	height: 128px;
+	width: 128px;
+	border-radius: 128px;
+	border: 1px solid #ddd;
+}
+
+.popup .page-head .back {
+	position: absolute;
+	top: 12px;
+	left: 10px;
+}
+
+.popup .page-head .back .material-icons {
+	color: #fff;
+}
+
+.popup .page-head span {
+	display: block;
+	padding: 20px;
+}
+
+.popup .page-body {
+	padding: 10px;
+}
+
+.popup table {
+	font-size: 1.1em;
+}
+
+.popup td {
+	padding-bottom: 10px;
+}
+
+:active {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+@media screen and (min-width: 60em) {
+	.dc-layout-transparent {
+		background: #E53935;
+	}
+}
